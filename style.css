@@ -1,15 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const firebaseUrl = "https://your-project-id.firebaseio.com/tono_ip.json";
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    background-color: #f0f0f0;
+    color: #333;
+}
 
-    // Mengambil IP dari Firebase
-    fetch(firebaseUrl)
-        .then(response => response.json())
-        .then(data => {
-            const ip = data.ip || "Tidak ditemukan";
-            document.getElementById('ip-address').textContent = ip;
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            document.getElementById('ip-address').textContent = 'Error fetching IP';
-        });
-});
+h1 {
+    font-size: 50px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+p {
+    font-size: 20px;
+}
