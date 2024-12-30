@@ -1,9 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Menggunakan API untuk mendapatkan IP publik
-    fetch('https://api.ipify.org?format=json')
+    const firebaseUrl = "https://your-project-id.firebaseio.com/tono_ip.json";
+
+    // Mengambil IP dari Firebase
+    fetch(firebaseUrl)
         .then(response => response.json())
         .then(data => {
-            document.getElementById('ip-address').textContent = data.ip; // Menampilkan IP
+            const ip = data.ip || "Tidak ditemukan";
+            document.getElementById('ip-address').textContent = ip;
         })
         .catch(error => {
             console.error('Error:', error);
