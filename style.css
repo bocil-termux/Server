@@ -1,46 +1,25 @@
-/* Set background color and full-screen layout */
 body {
-  background-color: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
-/* Styling for the moving text */
-#content {
-  text-align: center;
-  animation: moveText 5s linear infinite;
+h1 {
+    font-size: 50px;
+    animation: bounce 2s infinite;
 }
 
-/* Animation for the text */
-@keyframes moveText {
-  0% {
-    transform: translateX(-100%);
-    color: #fff;
-  }
-  25% {
-    transform: translateX(0);
-    color: #ff00ff;
-  }
-  50% {
-    transform: translateX(100%);
-    color: #00ff00;
-  }
-  75% {
-    transform: translateX(0);
-    color: #ffff00;
-  }
-  100% {
-    transform: translateX(-100%);
-    color: #fff;
-  }
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
-/* Larger text size */
-#text {
-  font-size: 5em;
-  font-weight: bold;
+p {
+    font-size: 20px;
 }
