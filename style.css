@@ -3,54 +3,42 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: black;
+  height: 100vh;
+  background: url('https://i.pinimg.com/originals/3e/fd/7c/3efd7c7bade2f04b56e5f1484c6f41f5.gif') center center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* Fireworks Canvas */
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+/* Container for Text */
+.container {
+  position: relative;
   z-index: 1;
 }
 
-/* Stars */
-.stars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  background: radial-gradient(circle, #ffffff 2px, transparent 2px) 0 0 / 50px 50px,
-              radial-gradient(circle, #ffffff 1px, transparent 1px) 25px 25px / 50px 50px,
-              black;
-}
-
-/* Title */
-.title {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 2;
-}
-
-#year {
-  font-size: 10vw;
-  font-family: Arial, sans-serif;
+/* Rainbow Text Effect */
+.rainbow-text {
+  font-size: 15vw;
   font-weight: bold;
-  animation: colorChange 3s infinite linear;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(90deg, 
+    #ff0000, #ff9900, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rainbow 3s linear infinite;
+  margin: 0;
 }
 
-/* Animation for the text */
-@keyframes colorChange {
-  0% { color: red; }
-  25% { color: yellow; }
-  50% { color: lime; }
-  75% { color: cyan; }
-  100% { color: magenta; }
+.small-text {
+  font-size: 5vw;
+  margin-top: -20px;
+}
+
+/* Animation for Rainbow Effect */
+@keyframes rainbow {
+  0% { background-position: 0%; }
+  100% { background-position: 300%; }
 }
